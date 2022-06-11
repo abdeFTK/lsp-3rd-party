@@ -39,7 +39,7 @@ extern "C" {
     // Different routine names for different hosts
     #if (TARGET_API_MAC_CARBON && __ppc__)
         VST_EXPORT AEffect* main_macho (audioMasterCallback audioMaster) { return VSTPluginMain (audioMaster); }
-    #elif WIN32
+    #elif defined(WIN32)
         VST_EXPORT AEffect* MAIN (audioMasterCallback audioMaster) { return VSTPluginMain (audioMaster); }
     #elif BEOS
         VST_EXPORT AEffect* main_plugin (audioMasterCallback audioMaster) { return VSTPluginMain (audioMaster); }
